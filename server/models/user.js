@@ -21,7 +21,8 @@ const userSchema = new Schema({
   },
   status: {
     type: String,
-    default: 'I am new!'
+    default: 'I am new!',
+    required : false,
   },
   posts: [
     {
@@ -29,6 +30,6 @@ const userSchema = new Schema({
       ref: 'Post'
     }
   ]
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('User', userSchema);
